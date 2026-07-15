@@ -58,45 +58,8 @@ AI-generated when you have an API key, deterministic when you don't.**
 
 ## 🎬 Demo
 
-```text
-$ python main.py scan localhost
+<img width="1432" height="1079" alt="image" src="https://github.com/user-attachments/assets/fecb34e3-1df5-4341-836f-e65e70c794a5" />
 
-╭─────────────────────── ⚔️ NEXUS-AI VULNERABILITY MATRIX v2.0.0 ⚔️ ────────────────────────╮
-│ [!] CRITICAL THREAT INTELLIGENCE SYSTEM INITIALIZED                                       │
-│                                                                                           │
-│  █████╗ ██╗    ██╗   ██╗██╗   ██╗██╗     ███╗   ██╗    ███████╗ ██████╗ █████╗ ███╗   ██╗ │
-│ ██╔══██╗██║    ██║   ██║██║   ██║██║     ████╗  ██║    ██╔════╝██╔════╝██╔══██╗████╗  ██║ │
-│ ███████║██║    ██║   ██║██║   ██║██║     ██╔██╗ ██║    ███████╗██║     ███████║██╔██╗ ██║ │
-│ ██╔══██║██║    ╚██╗ ██╔╝██║   ██║██║     ██║╚██╗██║    ╚════██║██║     ██╔══██║██║╚██╗██║ │
-│ ██║  ██║██║     ╚████╔╝ ╚██████╔╝███████╗██║ ╚████║    ███████║╚██████╗██║  ██║██║ ╚████║ │
-│ ╚═╝  ╚═╝╚═╝      ╚═══╝   ╚═════╝ ╚══════╝╚═╝  ╚═══╝    ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝ │
-╰────────────────────── ⚠️ AUTHORIZED CYBERSECURITY AUDITING ONLY ⚠️ ───────────────────────╯
-
-[⚡] Initiating assessment against: localhost
-[⚡] Scanning depth: 24 ports | timeout 1.5s | concurrency 250
-
-⚠️ WARNING: Discovered 1 exposed entry point(s) on localhost.
-------------------------------------------------------------------------
-[CRITICAL] Port 22 (SSH)
- ╰─► OWASP Mapping: A07:2021-Identification and Authentication Failures
- ╰─► Computing remediation...
-
-🛠️ [OFFLINE PATCH ENGINE RECOMMENDATION]
-1. Restrict external access to port 22 using host/network firewall rules.
-2. Audit the process bound to that port -- banner observed: 'SSH-2.0-OpenSSH_10.3p1'.
-3. Disable cleartext protocols where applicable and enforce TLS.
-4. If the service must remain internet-facing, place it behind an authenticated
-   reverse proxy or VPN and enable rate limiting.
-------------------------------------------------------------------------
-
-                    Exposure Summary — localhost
-┏━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃ Port ┃ Service ┃ OWASP Category                     ┃ Banner                     ┃
-┡━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
-│   22 │ SSH     │ A07:2021-Identification and Auth… │ SSH-2.0-OpenSSH_10.3p1     │
-└──────┴─────────┴─────────────────────────────────────┴───────────────────────────┘
-[+] Markdown report saved: ./nexus_audit_localhost.md
-```
 
 > In a real terminal the banner is animated (a boot-sequence spinner) and everything
 > above renders in full color via [Rich](https://github.com/Textualize/rich).
