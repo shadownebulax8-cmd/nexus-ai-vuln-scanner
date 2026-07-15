@@ -56,6 +56,44 @@ AI-generated when you have an API key, deterministic when you don't.**
 
 ---
 
+## 🗺️ Visual Recon & Remediation Pipeline Flow
+
+                  ┌────────────────────────────────────────┐
+                  │ Target Input (Presets, Ranges, Hosts)  │
+                  └───────────────────┬────────────────────┘
+                                      │
+                                      ▼
+                  ┌────────────────────────────────────────┐
+                  │    Asynchronous Port Scanner Core      │
+                  │   (Semaphore Capped + HEAD Probes)     │
+                  └───────────────────┬────────────────────┘
+                                      │
+                                      ▼ (Open Ports & Banner Grabs)
+                  ┌────────────────────────────────────────┐
+                  │     24-Service Signature Engine        │
+                  │     - Maps exposure to OWASP Top 10    │
+                  └───────────────────┬────────────────────┘
+                                      │
+                                      ▼
+                   Is OpenAI API Key provided in .env?
+                                ╱       ╲
+                        YES    ╱         ╲    NO
+                              ╱           ╲
+                             ▼             ▼
+               ┌───────────────────┐ ┌───────────────────┐
+               │ OpenAI Engine     │ │ Deterministic     │
+               │ (gpt-4o Dynamic   │ │ Signature-Based │
+               │ Remediation)      │ │ Offline Patching│
+               └─────────┬─────────┘ └─────────┬─────────┘
+                         │                     │
+                         └──────────┬──────────┘
+                                    ▼
+               ┌────────────────────────────────────────┐
+               │    Rich Console Tables & Live Reports  │
+               │      - Markdown / JSON Pipeline Output │
+               └────────────────────────────────────────┘
+
+
 ## 🎬 Demo
 
 <img width="1432" height="1079" alt="image" src="https://github.com/user-attachments/assets/fecb34e3-1df5-4341-836f-e65e70c794a5" />
